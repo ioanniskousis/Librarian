@@ -1,0 +1,251 @@
+* {
+  box-sizing: border-box;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+* ::-webkit-scrollbar {
+  display: none;
+}
+
+body {
+  position: relative;
+  padding: 0;
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  height: 60px;
+  width: 100%;
+  background-color: rgb(32, 128, 180 );
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+main {
+  margin: 0 auto;
+  height: calc(100vh - 90px);
+  width: 90%;
+  max-width: 800px;
+  border-left: 10px solid rgb(32, 128, 180 );
+  border-right: 10px solid rgb(32, 128, 180 );
+  position: relative;
+}
+
+.main-content {
+  position: absolute;
+  top: 30px;
+  width: 100%;
+  height: calc(100% - 30px);
+  background-color: #eee;
+  overflow-y: scroll;
+  padding-bottom: 10px;
+}
+
+#content-caption {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 30px;
+  padding: 0 50px;
+  background-color: rgba(32, 128, 180, 1 );
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  color: white;
+}
+
+#content-caption > * {
+  margin-top: -10px;
+}
+
+footer {
+  height: 30px;
+  background-color: rgb(32, 128, 180 );
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: x-small;
+}
+
+.image-link {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.image-link > img {
+  width: 60%;
+  height: 60%;
+}
+
+.image-link:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.image-link:active {
+  background-color: rgba(255, 255, 255, 0.6);
+}
+
+.header-button {
+  position: absolute;
+  width: 60px;
+  height: 100%;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.lib-button {
+  left: 0;
+}
+
+.add-button {
+  right: 0;
+}
+
+.header-caption {
+  color: white;
+  font-size: 36px;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.bookPanel {
+  height: 114px;
+  position: relative;
+  box-sizing: border-box;
+  margin: 10px 10px 0 10px;
+  padding: 15px 20px;
+  border: 2px solid rgb(32, 128, 180 );
+  background-color: white;
+  border-radius: 4px;
+}
+
+.label-for-checkbox {
+  display: block;
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  box-sizing: border-box;
+  padding: 0 10px;
+  font-size: 14px;
+  line-height: 40px;
+  height: 40px;
+  width: 90px;
+  color: rgb(10, 140, 60);
+  cursor: pointer;
+}
+
+.custom-checkbox {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  display: inline-block;
+  position: absolute;
+  background: url('../images/check-gray.png') no-repeat right 10px top 5px;
+  background-size: 24px 24px;
+  width: 100%;
+  height: 100%;
+  right: 0;
+  margin: 0;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.custom-checkbox:hover {
+  box-shadow: 0 0 4px 4px #ccc;
+}
+
+.custom-checkbox:active {
+  box-shadow: 0 0 2px 2px #ccc;
+}
+
+.custom-checkbox:checked {
+  background: url('../images/check-green.png') no-repeat right 10px top 5px;
+  background-size: 24px 24px;
+  /* border: 1px solid #ccc; */
+}
+
+.custom-checkbox:active {
+  border: 1px solid #eee;
+  background-image: url('../images/check-green.png');
+}
+
+.custom-checkbox:checked:active {
+  background-image: url('../images/check-gray.png');
+}
+
+.bookLabel {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 10px;
+  position: absolute;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  color: rgb(10, 60, 180);
+  height: 40px;
+  font-size: 16px;
+}
+
+.bookTextBox {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 10px;
+  position: absolute;
+  color: rgb(10, 60, 180);
+  color: black;
+  height: 40px;
+  font-size: 16px;
+}
+
+.authorBox {
+  left: 10px;
+  top: 10px;
+  width: calc(100% - 250px);
+}
+
+.titleBox {
+  left: 10px;
+  bottom: 10px;
+  width: calc(100% - 120px);
+}
+
+.pagesBox {
+  right: 110px;
+  top: 10px;
+  width: 120px;
+}
+
+.bookDelete {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  box-sizing: border-box;
+  height: 40px;
+  width: 90px;
+  /* color: rgb(10, 60, 180); */
+  /* background-color: rgb(10, 60, 180); */
+  border: 1px solid transparent;
+  border-radius: 4px;
+  background: url('../images/delete.png') no-repeat center center;
+  background-size: 24px 24px;
+  cursor: pointer;
+}
+
+.bookDelete:hover {
+  box-shadow: 0 0 4px 4px #ccc;
+}
+
+.bookDelete:active {
+  box-shadow: 0 0 2px 2px #ccc;
+}
