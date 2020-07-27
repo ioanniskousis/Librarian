@@ -2,4 +2,8 @@ function gel(id) {
   return document.getElementById(id);
 }
 
-export default gel;
+function crel(type) {
+  return document.createElement(type);
+}
+
+export { gel, crel };

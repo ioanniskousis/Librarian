@@ -2,167 +2,9 @@
 /* eslint-disable no-restricted-globals */
 /* eslint-disable import/extensions */
 import { Library, Book } from './library.js';
-import gel from './syntax.js';
+import { gel } from './syntax.js';
 import dbSeed from './seed.js';
 import { bookDeleteButton, bookReadCheckBox, bookLabel } from './bookPanelElements.js';
-
-/* syntax */
-
-// function gel(id) {
-//   return document.getElementById(id);
-// }
-
-
-/* library */
-
-// function Library() {
-//   this.books = [];
-//   this.length = () => this.books.length;
-
-//   this.find = (id) => {
-//     for (let index = 0; index < this.books.length; index += 1) {
-//       const element = this.books[index];
-//       if (element.id === id) {
-//         return index;
-//       }
-//     }
-//     return -1;
-//   };
-
-//   this.add = (book) => this.books.push(book);
-
-//   this.remove = (id) => {
-//     const index = this.find(id);
-//     if (index !== -1) {
-//       this.books.splice(index, 1);
-//       this.save();
-//       return true;
-//     }
-//     return false;
-//   };
-
-//   this.save = () => {
-//     localStorage.setItem('myLibrary', JSON.stringify(this.books));
-//   };
-
-//   this.newID = () => {
-//     if (this.books.length === 0) {
-//       return 1;
-//     }
-//     return this.books[this.books.length - 1].id + 1;
-//   };
-
-//   function bookIsRead(book) {
-//     return book.read === true;
-//   }
-
-//   this.booksRead = () => this.books.filter(bookIsRead).length;
-// }
-
-// function Book(id, author, title, numOfPages, read = false) {
-//   this.id = id;
-//   this.author = author;
-//   this.title = title;
-//   this.numOfPages = numOfPages;
-//   this.read = read;
-
-//   this.swapRead = () => {
-//     this.read = !this.read;
-//   };
-// }
-
-
-// /* bookPanelElements */
-
-// function bookDeleteButton() {
-//   const deleteDiv = document.createElement('div');
-//   deleteDiv.className = 'bookDelete';
-//   return deleteDiv;
-// }
-
-// function bookReadCheckBox(book) {
-//   const checkLabel = document.createElement('label');
-//   checkLabel.className = 'label-for-checkbox';
-//   checkLabel.htmlFor = 'readCheck'.concat(book.id);
-//   checkLabel.innerHTML = 'read';
-
-//   const readCheck = document.createElement('input');
-//   readCheck.type = 'checkbox';
-//   readCheck.id = 'readCheck'.concat(book.id);
-//   readCheck.className = 'custom-checkbox';
-//   readCheck.checked = book.read;
-
-//   checkLabel.appendChild(readCheck);
-
-//   return checkLabel;
-// }
-
-// function setupAuthorLabel(book, label) {
-//   label.dataType = 'text';
-//   label.dataItem = 'author';
-//   label.id = 'authorLabel'.concat(book.id);
-//   label.className = 'bookLabel authorBox';
-//   label.xClass = 'authorBox';
-//   label.innerHTML = book.author;
-//   label.dataValue = book.author;
-//   label.postFix = '';
-// }
-
-// function setupTitleLabel(book, label) {
-//   label.dataType = 'text';
-//   label.dataItem = 'title';
-//   label.id = 'titleLabel'.concat(book.id);
-//   label.className = 'bookLabel titleBox';
-//   label.xClass = 'titleBox';
-//   label.innerHTML = book.title;
-//   label.dataValue = book.title;
-//   label.postFix = '';
-// }
-
-// function setupPagesLabel(book, label) {
-//   label.dataType = 'integer';
-//   label.dataItem = 'numOfPages';
-//   label.id = 'pagesLabel'.concat(book.id);
-//   label.className = 'bookLabel pagesBox';
-//   label.xClass = 'pagesBox';
-//   label.innerHTML = parseInt(book.numOfPages, 10).toString().concat(' pages');
-//   label.dataValue = parseInt(book.numOfPages, 10);
-//   label.postFix = ' pages';
-// }
-
-// function bookLabel(book, dataitem) {
-//   const label = document.createElement('label');
-//   let setup = null;
-//   switch (dataitem) {
-//     case 'author':
-//       setup = setupAuthorLabel;
-//       break;
-//     case 'title':
-//       setup = setupTitleLabel;
-//       break;
-//     case 'pages':
-//       setup = setupPagesLabel;
-//       break;
-//     default:
-//       break;
-//   }
-//   if (setup) setup(book, label);
-
-//   return label;
-// }
-
-/* dbseed */
-
-// function dbSeed(libray) {
-//   libray.add(new Book(1, 'John Scipper', 'Elements of Choise', 234));
-//   libray.add(new Book(2, 'Dan Brown', 'Hit by the Light', 432));
-//   libray.add(new Book(3, 'Charly Humburg', 'Tournaments', 567, true));
-//   libray.add(new Book(4, 'Jack Flint', 'Fear of Fun', 1099));
-//   libray.add(new Book(5, 'William Timerlon', 'The Dust Of Horses', 608));
-//   libray.add(new Book(6, 'George Hamilton', 'Sand For Gold', 403, true));
-// }
-
-/* main */
 
 const myLibrary = new Library();
 const storage = JSON.parse(localStorage.getItem('myLibrary'));
@@ -187,15 +29,10 @@ function updateContentCaption() {
 }
 
 function readCheckClick(checkBox) {
-  // const book = checkBox.parentElement.book;
   checkBox.parentElement.book.swapRead();
   myLibrary.save();
   updateContentCaption();
 }
-
-// function deleteBookClick() {
-
-// }
 
 function inputBoxFocusOut(input) {
   const label = input.referenceLabel;
@@ -213,7 +50,6 @@ function inputBoxFocusOut(input) {
     if (isNotNumeric && (expectsNumber)) newValue = 0;
     label.textContent = newValue + label.postFix;
     label.dataValue = newValue;
-    // let book = input.parentElement.book;
     input.parentElement.book[label.dataItem] = newValue;
     myLibrary.save();
   }
@@ -282,6 +118,34 @@ function renderReadCheckBox(bookPanel, book) {
   bookPanel.appendChild(readCheck);
 }
 
+function panelRemove(panel) {
+  let pHeight = panel.offsetHeight;
+  panel.innerHTML = '';
+  panel.style.padding = '0';
+  setInterval(
+    () => {
+      pHeight -= 5;
+      panel.style.height = pHeight.toString().concat('px');
+      if (pHeight <= 0) {
+        panel.remove();
+      }
+    }, 10,
+  );
+}
+
+function panelShow(panel) {
+  let pHeight = 0;
+  setInterval(
+    () => {
+      pHeight += 5;
+      panel.style.height = pHeight.toString().concat('px');
+      if (pHeight >= 110) {
+        panel.style.height = '114px';
+      }
+    }, 10,
+  );
+}
+
 function renderDeleteButton(bookPanel, book) {
   const deleteButton = bookDeleteButton();
   deleteButton.addEventListener('click', () => {
@@ -290,7 +154,7 @@ function renderDeleteButton(bookPanel, book) {
     if (confirmDelete) {
       if (myLibrary.remove(book.id)) {
         const panel = gel('bookPanel'.concat(book.id));
-        panel.remove();
+        panelRemove(panel);
         updateContentCaption();
       }
     }
@@ -312,6 +176,7 @@ function renderBook(main, book) {
   bookPanel.id = 'bookPanel'.concat(book.id);
 
   main.appendChild(bookPanel);
+  panelShow(bookPanel);
 
   bookPanel.edit = (select = false) => {
     editDataItem(gel('authorLabel'.concat(book.id)), select);
@@ -338,7 +203,7 @@ function addBookToLibrary() {
   updateContentCaption();
   myLibrary.save();
 
-  main.scrollTo(0, bookPanel.offsetTop);
+  main.scrollTo(0, bookPanel.offsetTop + 114);
 
   bookPanel.edit(true);
 }

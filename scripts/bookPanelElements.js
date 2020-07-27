@@ -1,16 +1,19 @@
+/* eslint-disable import/extensions */
+import { crel } from './syntax.js';
+
 export function bookDeleteButton() {
-  const deleteDiv = document.createElement('div');
+  const deleteDiv = crel('div');
   deleteDiv.className = 'bookDelete';
   return deleteDiv;
 }
 
 export function bookReadCheckBox(book) {
-  const checkLabel = document.createElement('label');
+  const checkLabel = crel('label');
   checkLabel.className = 'label-for-checkbox';
   checkLabel.htmlFor = 'readCheck'.concat(book.id);
   checkLabel.innerHTML = 'read';
 
-  const readCheck = document.createElement('input');
+  const readCheck = crel('input');
   readCheck.type = 'checkbox';
   readCheck.id = 'readCheck'.concat(book.id);
   readCheck.className = 'custom-checkbox';
@@ -55,7 +58,7 @@ function setupPagesLabel(book, label) {
 }
 
 export function bookLabel(book, dataitem) {
-  const label = document.createElement('label');
+  const label = crel('label');
   let setup = null;
   switch (dataitem) {
     case 'author':
