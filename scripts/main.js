@@ -2,7 +2,7 @@
 /* eslint-disable no-restricted-globals */
 /* eslint-disable import/extensions */
 import { Library, Book } from './library.js';
-import { gel } from './syntax.js';
+import { gel, crel } from './syntax.js';
 import dbSeed from './seed.js';
 import { bookDeleteButton, bookReadCheckBox, bookLabel } from './bookPanelElements.js';
 
@@ -66,7 +66,7 @@ function inputBoxKeyPress(input, e) {
 }
 
 function editDataItem(label, select) {
-  const input = document.createElement('input');
+  const input = crel('input');
   input.type = 'text';
   input.className = 'bookTextBox'.concat(' ').concat(label.xClass);
   input.referenceLabel = label;
@@ -163,7 +163,7 @@ function renderDeleteButton(bookPanel, book) {
 }
 
 function renderBook(main, book) {
-  const bookPanel = document.createElement('div');
+  const bookPanel = crel('div');
   bookPanel.className = 'bookPanel';
 
   renderAuthorLabel(bookPanel, book);
