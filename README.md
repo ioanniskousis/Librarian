@@ -25,7 +25,7 @@
 <br />
 <p align="center">
   <a href="https://github.com/ioanniskousis/Librarian">
-    <img src="app/assets/images/microverse.png" alt="Microverse Logo" width="80" height="80">
+    <img src="resources/images/microverse.png" alt="Microverse Logo" width="80" height="80">
   </a>
   
   <h3 align="center">The Librarian Application</h3>
@@ -57,8 +57,6 @@ This is a small Library application where the user can add or remove books, edit
 - [About the Project](#about-the-project)
 - [Application Instructions](#application-instructions)
 - [System Requierments](#system-requierments)
-- [Dependencies](#dependencies)
-- [Configuration](#configuration)
 - [Development](#development)
 - [Built With](#built-with)
 - [Contributors](#contributors)
