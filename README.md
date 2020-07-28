@@ -141,7 +141,7 @@ This project was built using these technologies.
 
   - [Microverse](https://www.microverse.org/)
   - [The Odin Project](https://www.theodinproject.com/)
-  - [Ruby Documentation](https://www.ruby-lang.org/en/documentation/)
+
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
