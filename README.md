@@ -104,6 +104,8 @@ This is a small Library application where the user can add or remove books, edit
   * Clone the project
   ```
     https://github.com/ioanniskousis/Librarian.git
+    
+    Use VSCode and Live Server to show index.html
   ``` 
 <hr/>
 
