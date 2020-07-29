@@ -57,17 +57,25 @@ function inputBoxFocusOut(input) {
 }
 
 function inputBoxKeyPress(input, e) {
+  if (input.value.length === 0) {
+    input.value = input.referenceLabel.dataValue;
+  }
   if (e.keyCode === 27) {
     input.value = input.referenceLabel.dataValue;
     input.blur();
   } else if (e.keyCode === 13) {
     input.blur();
   }
+  if (input.referenceLabel.dataType === 'integer') {
+    if ((e.keyCode < 48) || (e.keyCode > 57)) {
+      e.preventDefault();
+    }
+  }
 }
 
 function editDataItem(label, select) {
   const input = crel('input');
-  input.type = 'text';
+  if (label.dataType === 'integer') input.pattern = '[0-9]';
   input.className = 'bookTextBox'.concat(' ').concat(label.xClass);
   input.referenceLabel = label;
   input.value = label.dataValue;
