@@ -92,7 +92,8 @@ This is a small Library application where the user can add or remove books, edit
 
   - Since the persistence of data is achieved using the localStorage, all the data inserted or edited are available only on the computer and the particular browser which have been used.  
 
-
+  - Text fields can not be left blank.  
+  
 <hr/>
 
 ## System Requierments
