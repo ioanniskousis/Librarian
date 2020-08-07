@@ -35,7 +35,7 @@
     <br />
     <a href="https://github.com/ioanniskousis/Librarian"><strong>Explore the docs »</strong></a>
     <br />
-    <a href="https://ioanniskousis.github.io/Librarian/"><strong>View Live></strong></a>
+    <a href="https://ioanniskousis.github.io/Librarian/"><strong>View Live</strong></a>
     <br />
     <a href="https://github.com/ioanniskousis/Librarian/issues">Report Bug</a>
     <a href="https://github.com/ioanniskousis/Librarian/issues">Request Feature</a>
