@@ -98,9 +98,9 @@ This is a small Library application where the user can add or remove books, edit
   
 <hr/>
 
-## Live Verion
+## Live Version
 
-  [View Live](https://github.com/ioanniskousis/Librarian)
+  [View Live](https://ioanniskousis.github.io/Librarian/)
 
 <hr/>
 
