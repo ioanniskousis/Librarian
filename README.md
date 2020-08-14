@@ -35,6 +35,7 @@
     <br />
     <a href="https://github.com/ioanniskousis/Librarian"><strong>Explore the docs »</strong></a>
     <br />
+    <a href="https://ioanniskousis.github.io/Librarian/"><strong>View Live</strong></a>
     <br />
     <a href="https://github.com/ioanniskousis/Librarian/issues">Report Bug</a>
     <a href="https://github.com/ioanniskousis/Librarian/issues">Request Feature</a>
@@ -55,6 +56,7 @@ This is a small Library application where the user can add or remove books, edit
 ## Table of Contents
 
 - [About the Project](#about-the-project)
+- [Live Version](#live-version)
 - [Application Instructions](#application-instructions)
 - [System Requierments](#system-requierments)
 - [Development](#development)
@@ -94,6 +96,12 @@ This is a small Library application where the user can add or remove books, edit
 
   - Text fields can not be left blank.  
   
+<hr/>
+
+## Live Version
+
+  [View Live](https://ioanniskousis.github.io/Librarian/)
+
 <hr/>
 
 ## System Requierments
