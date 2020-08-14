@@ -24,7 +24,10 @@ function updateContentCaption() {
   const someBooks = libLen.toString().concat(' book').concat(libLen === 1 ? '' : 's');
   gel('books-count').innerHTML = libLen === 0 ? noBooks : someBooks;
   const booksRead = myLibrary.booksRead();
-  const read = libLen === 0 ? '' : (booksRead === 0 ? 'none' : booksRead.toString()).concat(' read');
+  const whoRead = booksRead === libLen ? 'all' : booksRead.toString();
+  const someRead = whoRead.concat(' read');
+  const mayRead = booksRead === 0 ? 'none read' : someRead;
+  const read = libLen === 0 ? '' : mayRead;
   gel('books-read').innerHTML = read;
 }
 
